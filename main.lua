@@ -139,6 +139,7 @@ function love.load()
 	brueh:release()
 	gamecard:close()
 	end
+	renderstage = love.graphics.newCanvas(640,512)
 end
 function love.keypressed(key, scancode, isrepeat)
 	if key == "up" then
@@ -148,13 +149,13 @@ function love.keypressed(key, scancode, isrepeat)
 		moveddd=true
 	end
 	if key == "5" then
-		coindexter=1
+		coindexter=coindexter+1
 	end
 	if key == "6" then
-		coindexter=1
+		coindexter=coindexter+1
 	end
 	if key == "9" then
-		coindexter=1
+		coindexter=coindexter+1
 	end
 end
 function love.keyreleased(key)
@@ -201,6 +202,7 @@ function drawsprite(image,x,y,cx,cy,sx,sy,rt)
 	love.graphics.pop()
 end
 function love.draw()
+    love.graphics.setCanvas(renderstage)
 	love.graphics.setColor(1,1,1)
 	love.graphics.draw(bg, 0, 16)
 	drawsprite(spural[5],64,move,0,0,2,2)
@@ -219,4 +221,10 @@ function love.draw()
 	drawsprite(statbarbotleft,128,504,statbarbotleft:getWidth()/2,8,1,1)
 	drawsprite(statbarbotcent,320,504,statbarbotcent:getWidth()/2,8,1,1)
 	drawsprite(statbarbotright,512,504,statbarbotright:getWidth()/2,8,1,1)
+    love.graphics.setCanvas()
+	love.graphics.setColor(1,1,1)
+	love.graphics.push()
+	love.graphics.scale(love.graphics.getWidth( )/640, love.graphics.getHeight( )/512)
+	love.graphics.draw(renderstage, 0, 0)
+	love.graphics.pop()
 end
