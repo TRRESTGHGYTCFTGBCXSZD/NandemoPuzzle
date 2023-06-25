@@ -80,12 +80,14 @@ function love.load()
 	statbartopcent = love.graphics.newText( globalfont, "HI 0" )
 	statbartopright = love.graphics.newText( globalfont, "PUSH START" )
 	
-	statbarbotleft = love.graphics.newText( globalfont, --[["i love ghostlop"]]"")
+	statbarbotleft = love.graphics.newText( globalfont )
 	statbarbotcent = love.graphics.newText( globalfont, "CREDITS 99" )
-	statbarbotright = love.graphics.newText( globalfont, "i love ghostlop" )
+	statbarbotright = love.graphics.newText( globalfont )
 	
 	bg = love.graphics.newImage("background.png")
-	coined = love.audio.newSource("coin.wav", "static")
+	coined = love.audio.newSource("data/sfx/misc/coin.wav", "static")
+	selectionselect = love.audio.newSource("data/sfx/misc/selectionselect.wav", "static")
+	selectiondecide = love.audio.newSource("data/sfx/misc/selectiondecide.wav", "static")
 	
 	palette = {}
 	local gamecard = assert(io.open("game.mcr", "rb"))
@@ -139,7 +141,7 @@ function love.load()
 	brueh:release()
 	gamecard:close()
 	end
-	renderstage = love.graphics.newCanvas(640,512)
+	renderstage = love.graphics.newCanvas(768,512)
 end
 function love.keypressed(key, scancode, isrepeat)
 	if key == "up" then
@@ -170,8 +172,16 @@ function love.update(dt)
 frames = frames + (dt*60)
 	while frames > 1 do
 		frameticks = frameticks + 1
-		if moveuuu then move = move + 1 end
-		if moveddd then move = move - 1 end
+		if moveuuu then 
+			move = move + 1
+			love.audio.stop(selectionselect)
+			love.audio.play(selectionselect)
+		end
+		if moveddd then
+			move = move - 1
+			love.audio.stop(selectionselect)
+			love.audio.play(selectionselect)
+		end
 		if coindexter >= 1 then
 			coins = coins + coindexter
 			coindexter = 0 
@@ -205,26 +215,27 @@ function love.draw()
     love.graphics.setCanvas(renderstage)
 	love.graphics.setColor(1,1,1)
 	love.graphics.draw(bg, 0, 16)
-	drawsprite(spural[5],64,move,0,0,2,2)
+	drawsprite(spural[5],0,move,0,0,2,2)
+	drawsprite(spural[5],512,move,0,0,2,2)
 	--love.graphics.captureScreenshot("fuckfuckfuck.png")
 	--bg = love.graphics.newImage("fuckfuckfuck.png")
 	
 	love.graphics.setColor(0,0,0)
-	love.graphics.rectangle("fill", 0, 0, 640, 16)
-	love.graphics.rectangle("fill", 0, 480+16, 640, 16)
+	love.graphics.rectangle("fill", 0, 0, 768, 16)
+	love.graphics.rectangle("fill", 0, 480+16, 768, 16)
 	
 	love.graphics.setColor(1,.75,0)
-	drawsprite(statbartopleft,128,8,statbartopleft:getWidth()/2,8,1,1)
-	drawsprite(statbartopcent,320,8,statbartopcent:getWidth()/2,8,1,1)
-	drawsprite(statbartopright,512,8,statbartopright:getWidth()/2,8,1,1)
+	drawsprite(statbartopleft,160,8,statbartopleft:getWidth()/2,8,1,1)
+	drawsprite(statbartopcent,384,8,statbartopcent:getWidth()/2,8,1,1)
+	drawsprite(statbartopright,608,8,statbartopright:getWidth()/2,8,1,1)
 	
-	drawsprite(statbarbotleft,128,504,statbarbotleft:getWidth()/2,8,1,1)
-	drawsprite(statbarbotcent,320,504,statbarbotcent:getWidth()/2,8,1,1)
-	drawsprite(statbarbotright,512,504,statbarbotright:getWidth()/2,8,1,1)
+	drawsprite(statbarbotleft,160,504,statbarbotleft:getWidth()/2,8,1,1)
+	drawsprite(statbarbotcent,384,504,statbarbotcent:getWidth()/2,8,1,1)
+	drawsprite(statbarbotright,608,504,statbarbotright:getWidth()/2,8,1,1)
     love.graphics.setCanvas()
 	love.graphics.setColor(1,1,1)
 	love.graphics.push()
-	love.graphics.scale(love.graphics.getWidth( )/640, love.graphics.getHeight( )/512)
+	love.graphics.scale(love.graphics.getWidth( )/768, love.graphics.getHeight( )/512)
 	love.graphics.draw(renderstage, 0, 0)
 	love.graphics.pop()
 end
