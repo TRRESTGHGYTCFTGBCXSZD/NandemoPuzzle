@@ -1,41 +1,5 @@
 --[[
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⡪⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠺⡱⡨⡺⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⡪⡢⡣⡣⡣⡃⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡖⡝⠜⢌⠢⡊⢜⢜⢼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠴⡃⡣⡣⡣⡡⡑⢌⠢⡱⣑⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡔⡍⢌⠢⠢⡑⡕⡆⡪⡢⡣⠣⡃⣳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⡊⢎⢎⠢⡑⣑⢔⢕⢕⢕⡑⢌⠪⡐⠜⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⢎⠪⢨⠨⡪⡪⡪⠪⡊⡢⢊⢆⢇⢕⠨⡨⢪⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠺⡱⡡⡪⡒⡭⢊⢎⢎⠪⡐⢌⢂⠪⡸⡰⡱⡱⡑⢝⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠤⢮⣢⣱⢱⢱⢑⠅⡪⡐⢔⢱⢩⢌⢢⢱⢱⠱⢱⢱⢂⠪⡐⢥⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢍⢇⢇⢇⠎⢝⢙⠚⢎⠦⣪⣰⡰⡱⡱⡱⢑⠅⡊⡢⠱⡱⡑⡌⡺⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣞⠜⡜⡜⡔⡡⡑⢔⠡⢅⠕⠌⡎⡎⡏⡳⡳⢵⢬⣢⣊⢌⢎⢎⢎⠎⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠋⡉⢓⡳⡕⢦⣪⡐⡅⢕⠨⡪⡸⡸⡸⡸⡘⢌⢂⠢⡊⠍⢝⠺⡪⡮⡼⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⡐⡐⣰⠁⡧⠒⠂⠊⠛⠳⡓⢷⠵⢅⣇⡇⡇⢕⠨⡂⡪⡘⡐⢅⢣⢣⢣⢪⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⢀⢢⠃⡜⠀⠀⠀⠀⢀⣤⡈⢇⣐⡐⢐⡫⠯⠷⠗⣬⠦⣊⣌⢆⢇⢇⢇⢽⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠡⡇⠨⡂⠀⠀⠀⠀⣿⣿⣿⢸⠀⡭⣣⣴⣄⠀⠀⠀⠱⡔⡈⡩⠑⡓⢧⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⡼⠀⣄⡱⡀⠀⠀⠀⠻⠟⣫⠊⠠⡣⣿⣿⡿⠀⠀⠀⠀⢸⠉⢵⠐⠐⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡯⡢⡨⡄⠀⡇⠘⠪⣑⠂⠢⠒⠊⠀⠄⠈⢣⠙⠛⠁⠀⠀⠀⠀⡬⠀⡇⠌⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠓⠖⠖⠖⠖⠖⠖⢖⠆⠀⠀⠀⠀⢀⠀⡀⡀⡀⠀⠀⢰⠺⡲⡕⢍⠷⣀⠣⡀⠀⠈⢘⠦⢄⡂⠁⠠⠈⢀⠑⠤⣀⣀⡠⠤⠊⢀⡼⠠⢡⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠨⠨⡈⠌⠌⠨⠨⢐⡏⢋⢙⢉⠋⠍⠍⠩⢉⢣⠀⣀⣸⠐⣸⣊⣆⡣⡩⡲⣈⠉⡉⢁⠐⠀⡈⠑⠒⠮⠤⢠⣂⣀⣀⡀⠄⠐⡜⠠⢨⠎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠑⡈⣟⠚⠛⠛⡫⠂⢜⢇⣂⣂⣐⡨⠠⢁⣅⡦⡵⠐⡍⠨⢐⠈⠌⠌⣗⠌⡆⡍⠧⣄⠀⠄⠂⢀⠈⠠⠀⠄⠠⠀⠄⠂⠈⠉⣁⣝⣉⡡⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠅⠂⣗⠁⡅⠡⡹⢈⢸⠈⠁⠁⡏⠠⡨⠮⡏⢇⠚⡔⣥⡬⠐⣨⡤⣥⡷⢷⠬⣪⣘⢌⠳⣄⠐⠀⠐⠀⢂⢐⣠⡰⢤⠲⡓⢭⠩⡒⢔⢱⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢱⡁⠅⣗⠁⣝⠄⣝⠠⢸⠀⠀⢸⠠⢑⠃⠀⢣⢘⡶⠫⠋⡃⢂⢘⢙⠹⡀⡂⡇⠀⠀⣉⢉⠊⢛⣷⠳⣯⣩⣱⣰⣘⣴⡵⡗⣕⢕⣜⣬⣎⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡇⠂⣯⢀⢃⠂⢮⠐⢸⠀⠀⢰⠠⢱⠀⠀⠈⠃⠀⢸⣐⡐⡐⣠⣂⣘⢇⠂⢼⠀⠀⡧⡩⡟⣍⢎⢮⠞⣸⣸⣨⣪⡘⢜⣞⣛⠬⣗⠰⣇⠪⡇⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⢁⡷⢀⢂⣌⣪⠐⢸⠀⠀⠸⡀⡂⠓⠦⢤⢴⠀⠀⠈⢅⢐⢨⣀⣁⠮⢈⢸⠀⢰⢣⢪⠃⠸⡢⡹⡄⠀⠀⡠⢞⠌⣾⡀⠀⠩⡇⢧⡇⡇⡷⡣⣹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠄⡿⠴⢽⠁⠅⠌⢸⠀⠀⠀⠳⡠⡁⠅⡂⢸⠀⠀⠀⢸⡀⡂⠌⠄⡑⢠⠇⢠⢏⢢⡏⠀⠀⣗⢅⢷⡲⠪⣣⡱⠧⣢⢙⣦⠞⢜⡜⡇⢇⢣⡺⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⣔⡇⠀⠀⣇⣥⠼⠂⠀⠀⠀⠀⠈⠓⠶⠦⠗⠀⠀⠀⠀⠑⠦⣥⢬⠖⠋⠀⠉⠙⠚⠀⠀⠀⠘⠉⠁⠙⠋⠁⠀⠀⠘⠚⠈⠙⠚⠀⠛⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⡤⡤⢔⢤⢤⢔⢤⢄⢀⠀⣠⠤⣤⠀⠀⠀⠀⢠⠤⣤⠀⡤⢴⢲⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣄⡤⢤⡀⠀⠀⢀⣀⣠⣀⣄⣠⡀⠀⢠⠤⠤⡤⢤⣠⠀⠀⣠⢤⢄⠠⡤⡖⡖⣄⣄⣀⣄⣀⣄⣠⣀⣠⡀⠀⣀⣄⣠⣀⣄⣠⠀⠀⣀⣄⡀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠐⡗⡜⠴⡑⡒⡔⠵⡽⣯⣩⢑⢌⣪⣩⣫⠇⢀⡏⢌⢚⢊⠏⡚⣺⠁⠀⠀⠀⠀⠀⠀⢀⣘⡆⡺⢓⠅⡋⡓⢦⠸⡪⣴⠔⢔⣐⠇⣀⣸⡼⠬⠦⠵⣼⠀⡴⡺⢐⠳⠼⡊⡲⢳⡯⡂⣦⠢⠦⠦⢿⢐⢔⢹⢀⡇⡢⡂⣿⢐⢼⠀⠀⡇⡢⡗⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠠⣏⢪⢪⠦⡑⢅⠧⢧⣄⢏⢂⢫⡩⡙⡲⡵⣍⣢⠝⢩⢇⢪⠏⠊⡯⡩⣋⢍⡫⡩⣙⢽⣖⢬⢂⢷⠯⡝⡪⣸⡖⡫⡨⣊⣑⡍⡫⢾⣔⠬⠮⠵⢵⢐⢵⠓⢮⢂⢷⠷⡊⢴⠓⢻⠠⣩⣩⣋⣝⣽⢐⢗⠜⡿⡐⡗⢌⣿⢐⢽⠀⠀⡇⡢⡇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢀⡮⡑⣵⠨⡬⡱⠨⡞⠛⡞⡞⠭⢎⠏⢔⡇⢬⠥⡒⡫⣐⠞⠀⠀⠉⠉⠈⠁⠉⠉⠈⠉⠀⠈⣇⠪⡶⠜⠒⠁⢱⢗⠭⠤⡔⠏⢔⡝⡤⠴⢔⠖⡋⣢⠎⠀⢹⡐⡝⢗⠞⡻⡆⣹⠨⡚⢖⠳⡚⣾⢐⢽⡎⢌⣪⣏⠢⡿⣐⢙⠦⠲⡃⢆⡇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠈⠑⠞⠳⠵⠎⠮⠮⠇⠀⠓⠺⠚⠒⠓⠉⠀⠀⠳⠕⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠼⠚⠀⠀⠀⠀⠓⠓⠗⠚⠚⠉⠀⠘⠳⠱⠚⠊⠁⠀⠀⠀⠙⠒⠓⠚⠒⠁⠘⠊⠚⠒⠓⠊⠋⠒⠋⠙⠒⠃⠓⠓⠁⠉⠒⠓⠓⠚⠉⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-NANDEMOPAZURU - Ochige-Yarouze Emulator Created by GerioSB
+Puzzlow - Ochige-Yarouze Emulator Created by GerioSB
 
 0529d ~ 052ac - Block Appearing Probability
 0529c - TL;DR Magical Drop-Like Reaction (active low), Blocks Only React When Moved By Gravity, Locked Block Pair, Not Blocks Only React By Directly Contacting
@@ -73,9 +37,25 @@ function love.load()
 	coins = 0
 	coindexter = 0
 	bit32 = require("bit")
+	GerioVOX = require("data.sfx.misc.VOX")
 	love.graphics.setBackgroundColor(0, 0, 0, 0)
 	
-	coined = love.audio.newSource("data/sfx/misc/coin.wav", "static")
+	colorswap = {}
+  colorswap.shader = love.graphics.newShader( -- load the shader
+  [[
+    //Fragment shader
+    uniform sampler2D ColorTable; // 1 x 16 pixels
+    uniform sampler2D MyIndexTexture;
+    varying vec2 TexCoord0;
+
+    vec4 effect( vec4 color, Image MyIndexTexture, vec2 TexCoord0, vec2 screen_coords ){
+    	//What color do we want to index?
+    	vec4 myindex = texture2D(MyIndexTexture, TexCoord0);
+    	//Do a dependency texture read
+    	vec4 texel = texture2D(ColorTable, myindex.xy);
+    	return texel;   //Output the color
+    }
+  ]] )
 	
 	globalfont = love.graphics.newFont( "paz.otf" ,16 )
 	--globalwafont = love.graphics.newFont( "paz.otf" ,16 )
@@ -92,18 +72,20 @@ function love.load()
 	statbarbotright = love.graphics.newText( globalfont )
 	
 	bg = love.graphics.newImage("background.png")
-	coined = love.audio.newSource("data/sfx/misc/coin.wav", "static")
+	coined = GerioVOX(love.filesystem.read("data/sfx/misc/n03.rom25"),1000000,1)
 	selectionselect = love.audio.newSource("data/sfx/misc/selectionselect.wav", "static")
 	selectiondecide = love.audio.newSource("data/sfx/misc/selectiondecide.wav", "static")
 	
 	palette = {}
-	local gamecard = assert(io.open("game.mcr", "rb"))
-	gamecard:read(0x226c) --dummy read for alignment
+	local gamecard = assert(love.filesystem.read("game.mcr"))
+	local address = (0x226c) --dummy read for alignment
 	for rr = 0,63 do
 		palette[rr] = {}
 		for ra = 0,15 do
-			shitbyteb = string.byte(gamecard:read(1))
-			shitbytea = string.byte(gamecard:read(1))
+			shitbyteb = string.byte(string.sub(gamecard,address+1,address+1))
+			address = address + 1
+			shitbytea = string.byte(string.sub(gamecard,address+1,address+1))
+			address = address + 1
 			colored = bit32.lshift(shitbytea,8)
 			colored = bit32.bor(colored,shitbyteb)
 			red = bit32.band(colored,0x1f)
@@ -114,40 +96,67 @@ function love.load()
 			palette[rr][ra] = {["red"]=red/32,["green"]=green/32,["blue"]=blue/32}
 		end
 	end
-	gamecard:close()
+	numberOfPalettes = 0
+	paletteData = love.image.newImageData(16,65)
+	for gon = 0,15 do
+		paletteData:setPixel(gon, 0, gon/16, gon/16, gon/16, gon == 0 and 0 or 1)
+	end
+	for pa = 0,63 do
+		for gon = 0,15 do
+			dizur = palette[pa][gon]["red"]
+			dizug = palette[pa][gon]["green"]
+			dizub = palette[pa][gon]["blue"]
+			paletteData:setPixel(gon, pa+1, dizur, dizug, dizub, gon == 0 and 0 or 1)
+		end
+	end
+	honjitsu = love.graphics.newImage(paletteData)
+	coordinates = {}
+	for x = 1, paletteData:getWidth() do
+		local r, g, b, a = paletteData:getPixel(x - 1, 0)
+		table.insert(coordinates, {x = r*255, y = g*255})
+	end
+
+	palettes = {}
+	for y = 1, paletteData:getHeight() do
+		numberOfPalettes = numberOfPalettes + 1
+		local canvas = love.graphics.newCanvas(256, 256)
+		local canvasData = canvas:newImageData()
+		for x = 1, paletteData:getWidth() do
+			local cx, cy = coordinates[x].x, coordinates[x].y
+			local r, g, b, a = paletteData:getPixel(x - 1, y - 1)
+			canvasData:setPixel(cx, cy, r, g, b, a)
+		end
+		local result = love.graphics.newImage(canvasData)
+		result:setFilter( 'nearest' )
+		table.insert(palettes, result)
+	end
+	colorswap.palette = 7
+	colorswap.shader:send( "ColorTable", palettes[colorswap.palette] )
 	
-	spural = {}
 	--if iscorrectsize ~= 128*1024 then error("Woah wait... Are you put the correct size of memory card? This is not right size.",0) end
-	for bruuh = 0,63 do
-	brueh = love.image.newImageData(256,768)
-	local gamecard = assert(io.open("game.mcr", "rb"))
-	gamecard:read(0x7f78) --dummy read for alignment
-		for rb = 0,47 do
-				for rg = 0,15 do
-	for rr = 0,15 do
-			for ra = 0,14,2 do
-					shitbyte = string.byte(gamecard:read(1))
+	brueh = love.image.newImageData(256,768+16)
+	local address = (0x7f78) --dummy read for alignment
+	for ar = 0,15 do
+		brueh:setPixel(ar, 0, ar/16, ar/16, ar/16, ar == 0 and 0 or 1)
+	end
+	for rb = 0,47 do
+		for rg = 0,15 do
+			for rr = 0,15 do
+				for ra = 0,14,2 do
+					shitbyte = string.byte(string.sub(gamecard,address+1,address+1))
+					address = address + 1
 					rightnibble = bit32.band(shitbyte,0xf0)
 					rightnibble = bit32.rshift(shitbyte,4)
 					leftnibble = bit32.band(shitbyte,0x0f)
 					--error(brightness)
-					dizur = palette[5][leftnibble]["red"]
-					dizug = palette[5][leftnibble]["green"]
-					dizub = palette[05][leftnibble]["blue"]
-					brueh:setPixel((rr*16)+ra, (rb*16)+rg, dizur, dizug, dizub, leftnibble == 0 and 0 or 1)
-					dizur = palette[5][rightnibble]["red"]
-					dizug = palette[05][rightnibble]["green"]
-					dizub = palette[05][rightnibble]["blue"]
-					brueh:setPixel((rr*16)+ra+1, (rb*16)+rg, dizur, dizug, dizub, rightnibble == 0 and 0 or 1)
+					brueh:setPixel((rr*16)+ra, (rb*16)+rg+16, leftnibble/16, leftnibble/16, leftnibble/16, leftnibble == 0 and 0 or 1)
+					brueh:setPixel((rr*16)+ra+1, (rb*16)+rg+16, rightnibble/16, rightnibble/16, rightnibble/16, rightnibble == 0 and 0 or 1)
 				end
 			end
 		end
 	end
-	spural[bruuh] = love.graphics.newImage(brueh)
-	spural[bruuh]:setFilter("linear", "nearest")
-	brueh:release()
-	gamecard:close()
-	end
+	spural = love.graphics.newImage(brueh)
+	spural:setFilter("linear", "nearest")
 	renderstage = love.graphics.newCanvas(768,512)
 end
 function love.keypressed(key, scancode, isrepeat)
@@ -181,19 +190,18 @@ frames = frames + (dt*60)
 		frameticks = frameticks + 1
 		if moveuuu then 
 			move = move + 1
-			love.audio.stop(selectionselect)
-			love.audio.play(selectionselect)
+			--love.audio.stop(selectionselect)
+			--love.audio.play(selectionselect)
 		end
 		if moveddd then
 			move = move - 1
-			love.audio.stop(selectionselect)
-			love.audio.play(selectionselect)
+			--love.audio.stop(selectionselect)
+			--love.audio.play(selectionselect)
 		end
 		if coindexter >= 1 then
 			coins = coins + coindexter
 			coindexter = 0 
-			love.audio.stop(coined)
-			love.audio.play(coined)
+			coined:Play(0x01795C*2,0x018292*2,4,false,nil)
 		end
 		frames = frames - 1
 		local drooow = ""
@@ -209,6 +217,7 @@ frames = frames + (dt*60)
 		end
 		statbarbotcent:set(drooow)
 	end
+	coined:Update()
 end
 function drawsprite(image,x,y,cx,cy,sx,sy,rt)
 	love.graphics.push()
@@ -222,8 +231,10 @@ function love.draw()
     love.graphics.setCanvas(renderstage)
 	love.graphics.setColor(1,1,1)
 	love.graphics.draw(bg, 0, 16)
-	drawsprite(spural[5],0,move,0,0,2,2)
-	drawsprite(spural[5],512,move,0,0,2,2)
+	love.graphics.setShader(colorswap.shader)
+	drawsprite(spural,0,move,0,0,2,2)
+	love.graphics.setShader()
+	drawsprite(spural,512,move,0,0,2,2)
 	--love.graphics.captureScreenshot("fuckfuckfuck.png")
 	--bg = love.graphics.newImage("fuckfuckfuck.png")
 	
